@@ -1,4 +1,8 @@
-class type_spec:
+class specification:
+    pass
+
+
+class type_spec(specification):
     def __init__(self, type):
         self.__type = type
 
@@ -6,7 +10,7 @@ class type_spec:
         return isinstance(target, self.__type)
 
 
-class either:
+class either(specification):
     def __init__(self, *specs):
         self.__specs = specs
 
