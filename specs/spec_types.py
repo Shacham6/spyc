@@ -1,4 +1,4 @@
-from specs.internal import conform_spec
+from specs.internal import build_spec
 
 
 class specification:
@@ -22,7 +22,7 @@ class callable_spec(specification):
 
 
 def either(*specs):
-    return either_spec([conform_spec(spec) for spec in specs])
+    return either_spec([build_spec(spec) for spec in specs])
 
 
 class either_spec(specification):
@@ -37,7 +37,7 @@ class either_spec(specification):
 
 
 def all_of(*specs):
-    return all_of_spec([conform_spec(spec) for spec in specs])
+    return all_of_spec([build_spec(spec) for spec in specs])
 
 
 class all_of_spec(specification):

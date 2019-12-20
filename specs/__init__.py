@@ -3,5 +3,5 @@ from specs.spec_types import either, all_of
 
 
 def is_valid(target, specs):
-    specs = internal.conform_spec(specs)
+    specs = internal.build_spec(specs)
     return specs.is_valid(target)

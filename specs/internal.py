@@ -1,7 +1,7 @@
 from specs import spec_types
 
 
-def conform_spec(spec):
+def build_spec(spec):
     if isinstance(spec, spec_types.specification):
         return spec
     elif isinstance(spec, type):
