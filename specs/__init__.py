@@ -1,5 +1,5 @@
 from specs import spec_types, internal
-from specs.spec_types import either
+from specs.spec_types import either, all_of
 
 
 def is_valid(target, specs):

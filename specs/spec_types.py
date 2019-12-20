@@ -1,3 +1,6 @@
+from specs.internal import conform_spec
+
+
 class specification:
     pass
 
@@ -18,12 +21,31 @@ class callable_spec(specification):
         return self.__callable(target)
 
 
-class either(specification):
-    def __init__(self, *specs):
+def either(*specs):
+    return either_spec([conform_spec(spec) for spec in specs])
+
+
+class either_spec(specification):
+    def __init__(self, specs):
         self.__specs = specs
 
     def is_valid(self, target):
         for spec in self.__specs:
-            if isinstance(target, spec):
+            if spec.is_valid(target):
                 return True
         return False
+
+
+def all_of(*specs):
+    return all_of_spec([conform_spec(spec) for spec in specs])
+
+
+class all_of_spec(specification):
+    def __init__(self, specs):
+        self.__specs = specs
+
+    def is_valid(self, target):
+        for spec in self.__specs:
+            if not spec.is_valid(target):
+                return False
+        return True
