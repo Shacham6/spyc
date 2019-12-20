@@ -1,5 +1,5 @@
 *.pyc
-.venv/ 
+.venv/
 .pytest_cache/
 
 .vscode/settings.json
