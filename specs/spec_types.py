@@ -1,11 +1,23 @@
 from specs.internal import build_spec
 
 
-class specification:
+class specification_type:
     pass
 
 
-class type_spec(specification):
+def specs(specs):
+    return __specs(build_spec(specs))
+
+
+class __specs(specification_type):
+    def __init__(self, specs):
+        self.__specs = specs
+
+    def is_valid(self, target):
+        return self.__specs.is_valid(target)
+
+
+class type_spec(specification_type):
     def __init__(self, type):
         self.__type = type
 
@@ -13,7 +25,7 @@ class type_spec(specification):
         return isinstance(target, self.__type)
 
 
-class callable_spec(specification):
+class callable_spec(specification_type):
     def __init__(self, callable):
         self.__callable = callable
 
@@ -25,7 +37,7 @@ def either(*specs):
     return either_spec([build_spec(spec) for spec in specs])
 
 
-class either_spec(specification):
+class either_spec(specification_type):
     def __init__(self, specs):
         self.__specs = specs
 
@@ -40,7 +52,7 @@ def all_of(*specs):
     return all_of_spec([build_spec(spec) for spec in specs])
 
 
-class all_of_spec(specification):
+class all_of_spec(specification_type):
     def __init__(self, specs):
         self.__specs = specs
 

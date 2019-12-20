@@ -1,13 +1,13 @@
 from specs import spec_types
 
 
-def build_spec(spec):
-    if isinstance(spec, spec_types.specification):
-        return spec
-    elif isinstance(spec, type):
-        return spec_types.type_spec(spec)
-    elif callable(spec):
-        return spec_types.callable_spec(spec)
+def build_spec(requirements):
+    if isinstance(requirements, spec_types.specification_type):
+        return requirements
+    elif isinstance(requirements, type):
+        return spec_types.type_spec(requirements)
+    elif callable(requirements):
+        return spec_types.callable_spec(requirements)
     raise UnsupportedSpecification()
 
 

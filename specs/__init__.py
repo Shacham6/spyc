@@ -1,7 +1,6 @@
 from specs import spec_types, internal
-from specs.spec_types import either, all_of
+from specs.spec_types import either, all_of, specs
 
 
-def is_valid(target, specs):
-    specs = internal.build_spec(specs)
-    return specs.is_valid(target)
+def is_valid(target, requirements):
+    return specs(requirements).is_valid(target)
