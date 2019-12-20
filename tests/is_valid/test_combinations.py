@@ -24,3 +24,17 @@ def test_either_requires_at_least_on_item_to_be_validated():
     assert is_valid(2, even_or_odd_number)
     assert is_valid(1, even_or_odd_number)
     assert not is_valid(2.3, even_or_odd_number)
+
+
+def test_either_and_all_of_nest():
+    def is_even(target):
+        return target % 2 == 0
+
+    def is_odd(target):
+        return target % 2 == 1
+
+    even_or_odd_integer = all_of(int, either(is_even, is_odd))
+    assert is_valid(2, even_or_odd_integer)
+    assert is_valid(1, even_or_odd_integer)
+    assert not is_valid(2.5, even_or_odd_integer)
+    assert not is_valid(2.0, even_or_odd_integer)
