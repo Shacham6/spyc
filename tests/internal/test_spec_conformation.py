@@ -10,6 +10,13 @@ def test_conforms_types():
     )
 
 
+def test_conforms_callables():
+    assert isinstance(
+        conform_spec(lambda *args: True),
+        spec_types.callable_spec,
+    )
+
+
 def test_returns_self_when_spec_provided():
     assert isinstance(
         conform_spec(spec_types.either(int, str)),

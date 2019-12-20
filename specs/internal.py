@@ -2,10 +2,12 @@ from specs import spec_types
 
 
 def conform_spec(spec):
-    if isinstance(spec, type):
-        return spec_types.type_spec(spec)
-    elif isinstance(spec, spec_types.specification):
+    if isinstance(spec, spec_types.specification):
         return spec
+    elif isinstance(spec, type):
+        return spec_types.type_spec(spec)
+    elif callable(spec):
+        return spec_types.callable_spec(spec)
     raise UnsupportedSpecification()
 
 

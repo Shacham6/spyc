@@ -10,6 +10,14 @@ class type_spec(specification):
         return isinstance(target, self.__type)
 
 
+class callable_spec(specification):
+    def __init__(self, callable):
+        self.__callable = callable
+
+    def is_valid(self, target):
+        return self.__callable(target)
+
+
 class either(specification):
     def __init__(self, *specs):
         self.__specs = specs
