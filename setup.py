@@ -5,7 +5,7 @@ setup(
     author="Ajo",
     version="0.0.1",
     packages=find_packages(
-        include=("spec", ),
+        include=("specs", ),
         exclude=("tests", ),
     ),
     install_requires=[],
