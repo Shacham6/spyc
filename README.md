@@ -113,6 +113,8 @@ Features currently planned:
 
 - **Automatic specs validation using decorators and type-annotations**
 
+- **Python 2.7 support**
+
 
 # Contribution
 More details soon.
