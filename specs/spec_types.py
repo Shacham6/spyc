@@ -1,4 +1,5 @@
 from specs.internal import build_spec
+import itertools
 
 
 class specification_type:
@@ -66,9 +67,20 @@ class all_of_spec(specification_type):
 class with_members(specification_type):
     def __init__(self, *members, **checked_members):
         self.__members = members
+        self.__checked_members = {
+            name: build_spec(spec)
+            for name, spec in checked_members.items()
+        }
 
     def is_valid(self, target):
-        for member in self.__members:
+        needed_members = itertools.chain(self.__members,
+                                         self.__checked_members.keys())
+        for member in needed_members:
             if not hasattr(target, member):
                 return False
+
+        for checked_member, spec in self.__checked_members.items():
+            if not spec.is_valid(getattr(target, checked_member)):
+                return False
+
         return True
