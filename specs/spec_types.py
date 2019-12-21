@@ -61,3 +61,14 @@ class all_of_spec(specification_type):
             if not spec.is_valid(target):
                 return False
         return True
+
+
+class with_members(specification_type):
+    def __init__(self, *members, **checked_members):
+        self.__members = members
+
+    def is_valid(self, target):
+        for member in self.__members:
+            if not hasattr(target, member):
+                return False
+        return True
