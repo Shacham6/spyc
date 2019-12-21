@@ -1,8 +1,8 @@
-## <p align="center">`spec` - Python object specifications for humans.</p>
+## <p align="center">`Spyc` - Python object specifications for humans.</p>
 ---
 
 <p align="center">
-Designed after Clojure's great counterpart, `spec` aims</br>
+Designed after Clojure's great counterpart, `spyc` aims</br>
 to combat the rising popularity of static-types checkers</br>
 in Python's ecosystem.
 </p>
@@ -13,7 +13,7 @@ in Python's ecosystem.
 
 ### **Validations of types**
 ``` python
-from spycs import is_valid
+from spyc import is_valid
 
 # Works for primitives
 assert is_valid(2, int)
@@ -31,7 +31,7 @@ assert is_valid(Person("Ajo", 22), Person)
 ---
 ### **Validations via predicates.**
 ``` python
-from spycs import is_valid
+from spyc import is_valid
 
 def is_even(target):
     return target % 2 == 0
@@ -49,7 +49,7 @@ via the `either` and `all_of` objects.
 `either` requires that at least one specification is valid.
 
 ``` python
-from spycs import is_valid, either, all_of
+from spyc import is_valid, either, all_of
 
 def is_even(target):
     return target % 2 == 0
@@ -71,7 +71,7 @@ validate both the existance of members, and apply
 specifications on those members themselves.
 
 ``` python
-from spycs import is_valid, with_members
+from spyc import is_valid, with_members
 
 class Person:
     def __init__(self, name, age):
