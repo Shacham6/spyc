@@ -19,7 +19,7 @@ from spyc import is_valid
 assert is_valid(2, int)
 assert is_valid("string", str)
 
-# As well as composite-types (classes)
+# As well as user-defined types
 class Person:
     def __init__(self, name, age):
         self.name = name
