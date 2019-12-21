@@ -1,4 +1,4 @@
-from spec import spec_types
+from spyc import spec_types
 
 
 def build_spec(requirements):

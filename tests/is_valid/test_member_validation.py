@@ -1,4 +1,4 @@
-from spec import is_valid, with_members
+from spyc import is_valid, with_members
 
 
 class Person:

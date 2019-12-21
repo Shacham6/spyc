@@ -1,4 +1,4 @@
-from spec.internal import build_spec
+from spyc.internal import build_spec
 import itertools
 
 

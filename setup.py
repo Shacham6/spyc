@@ -5,12 +5,12 @@ Python Specification and validation library.
 """
 
 setup(
-    name="spec",
+    name="spyc",
     author="Pajo",
     version="0.0.1",
     description=DESCRIPTION,
     packages=find_packages(
-        include=("specs", ),
+        include=("spyc", ),
         exclude=("tests", ),
     ),
     install_requires=[],

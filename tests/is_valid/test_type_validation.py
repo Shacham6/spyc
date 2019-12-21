@@ -1,4 +1,4 @@
-from spec import is_valid, either
+from spyc import is_valid, either
 
 
 class Person:

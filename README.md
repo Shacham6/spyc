@@ -13,7 +13,7 @@ in Python's ecosystem.
 
 ### **Validations of types**
 ``` python
-from specs import is_valid
+from spycs import is_valid
 
 # Works for primitives
 assert is_valid(2, int)
@@ -31,7 +31,7 @@ assert is_valid(Person("Ajo", 22), Person)
 ---
 ### **Validations via predicates.**
 ``` python
-from specs import is_valid
+from spycs import is_valid
 
 def is_even(target):
     return target % 2 == 0
@@ -49,7 +49,7 @@ via the `either` and `all_of` objects.
 `either` requires that at least one specification is valid.
 
 ``` python
-from specs import is_valid, either, all_of
+from spycs import is_valid, either, all_of
 
 def is_even(target):
     return target % 2 == 0
@@ -71,7 +71,7 @@ validate both the existance of members, and apply
 specifications on those members themselves.
 
 ``` python
-from specs import is_valid, with_members
+from spycs import is_valid, with_members
 
 class Person:
     def __init__(self, name, age):

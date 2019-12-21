@@ -1,4 +1,4 @@
-from spec import is_valid, either, all_of
+from spyc import is_valid, either, all_of
 
 
 def test_all_of_requires_everything_is_validated():
