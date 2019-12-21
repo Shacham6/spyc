@@ -7,7 +7,7 @@ Python Specification and validation library.
 setup(
     name="spyc",
     author="Pajo",
-    version="0.0.1",
+    version="0.0.2",
     description=DESCRIPTION,
     packages=find_packages(
         include=("spyc", ),
