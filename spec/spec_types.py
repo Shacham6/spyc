@@ -1,4 +1,4 @@
-from specs.internal import build_spec
+from spec.internal import build_spec
 import itertools
 
 

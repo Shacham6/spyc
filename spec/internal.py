@@ -1,4 +1,4 @@
-from specs import spec_types
+from spec import spec_types
 
 
 def build_spec(requirements):

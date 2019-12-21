@@ -1,4 +1,4 @@
-from specs import is_valid, with_members
+from spec import is_valid, with_members
 
 
 class Person:

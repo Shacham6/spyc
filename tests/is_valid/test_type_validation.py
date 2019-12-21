@@ -1,4 +1,4 @@
-from specs import is_valid, either
+from spec import is_valid, either
 
 
 class Person:

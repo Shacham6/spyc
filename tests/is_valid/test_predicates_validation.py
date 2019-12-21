@@ -1,4 +1,4 @@
-from specs import is_valid
+from spec import is_valid
 
 
 def test_validated_by_result_of_callable():

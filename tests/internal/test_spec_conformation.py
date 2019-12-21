@@ -1,6 +1,6 @@
 import pytest
-from specs.internal import build_spec, UnsupportedSpecification
-from specs import is_valid, spec_types
+from spec.internal import build_spec, UnsupportedSpecification
+from spec import is_valid, spec_types
 
 
 @pytest.mark.parametrize("input, expected_type", [
