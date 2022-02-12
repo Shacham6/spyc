@@ -20,12 +20,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install build -e .
 
-      - name: Read New Version
-        id: package-version
+      - id: package-version
         run: |
           echo "::set-output name=version::$(python -c 'from spyc.__version__ import __version__; print(__version__)')"
 
       - run: |
           python -m build
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
           gh release create "v${{ steps.package-version.outputs.version }}" \
             --notes-file CHANGELOG.md
